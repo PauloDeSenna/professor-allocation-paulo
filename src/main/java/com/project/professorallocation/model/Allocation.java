@@ -10,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,13 +34,36 @@ public class Allocation {
 	@Column(nullable = false)
 	private Date endHour;
 	
-	
-	private Long professorId;
-	
-	
+	@Column(name = "course_id", nullable = false)
 	private Long courseId;
-
 	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "course_id", nullable = false, insertable = false, updatable = false)
+	private Course couse;
+	
+	public Course getCouse() {
+		return couse;
+	}
+
+	public void setCouse(Course couse) {
+		this.couse = couse;
+	}
+
+	@Column(name = "professor_id", nullable = false)
+	private Long professorId;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "professor_id", nullable = false, insertable = false, updatable = false)
+	private Professor professor;
+	
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
 	public Allocation() {
 		super();
 	}
