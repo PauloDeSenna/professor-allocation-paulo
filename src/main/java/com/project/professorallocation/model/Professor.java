@@ -18,7 +18,7 @@ public class Professor {
 	
 	@Column(nullable= false)
 	private String name;
-	@Column(nullable= false, length= 11)
+	@Column(length= 11)
 	private String cpf;
 	@Column(name= "department_id", nullable = false)
 	private Long departmentId;

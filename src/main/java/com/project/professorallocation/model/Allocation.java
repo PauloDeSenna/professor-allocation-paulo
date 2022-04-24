@@ -23,15 +23,15 @@ public class Allocation {
 	private Long id;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, name = "date")
+	@Column(name = "date")
 	private DayOfWeek dayOfWeek;
 	
 	@Temporal(TemporalType.TIME)
-	@Column(nullable = false)
+	@Column(name = "date2")
 	private Date  startHour;
 	
 	@Temporal(TemporalType.TIME)
-	@Column(nullable = false)
+	@Column()
 	private Date endHour;
 	
 	@Column(name = "course_id", nullable = false)
