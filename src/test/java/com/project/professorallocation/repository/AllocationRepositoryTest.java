@@ -38,4 +38,8 @@ public class AllocationRepositoryTest {
 		System.out.println(allocation);
 	}
 
+	@Test
+    public void deleteAll() {
+    	repository.deleteAllInBatch();
+    }
 }
