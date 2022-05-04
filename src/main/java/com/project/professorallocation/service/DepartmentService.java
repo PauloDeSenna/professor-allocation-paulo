@@ -46,4 +46,5 @@ public class DepartmentService {
 	public List<Department> findAll() {
 		return repository.findAll();
 	}
+
 }
